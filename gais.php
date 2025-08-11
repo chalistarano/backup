@@ -7,7 +7,7 @@ $config = [
     'brandFile' => 'brand.txt',
     'deskripsiFile' => 'deskripsi.txt',
     'keywordsFile' => 'keywords.txt',
-    'outputDir' => __DIR__ . '/public',
+    'outputDir' => __DIR__ . '/',
     'templateFile' => 'template.html',
     'baseUrl' => rtrim('https://opac.handayani.ac.id', '/'), // Hilangkan trailing slash
     'urltujuan' => 'https://amp-ensign-edu-sa.pages.dev',
@@ -128,7 +128,7 @@ foreach ($brands as $i => $brand) {
 
     // Tambahkan ke sitemap
     if ($config['createSitemap']) {
-        $sitemapEntries[] = "    <url>\n        <loc>{$config['baseUrl']}/public/{$folderName}/</loc>\n        <lastmod>" . date('Y-m-d') . "</lastmod>\n    </url>";
+        $sitemapEntries[] = "    <url>\n        <loc>{$config['baseUrl']}//{$folderName}/</loc>\n        <lastmod>" . date('Y-m-d') . "</lastmod>\n    </url>";
     }
 
     echo "✅ Folder dibuat: $folderName\n";
@@ -149,5 +149,6 @@ if ($config['createSitemap'] && !empty($sitemapEntries)) {
 
 
 echo "🎉 Proses selesai.\n";
+
 
 
