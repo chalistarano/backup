@@ -20,12 +20,12 @@ function buat_index_file($nama_folder, $template_konten, $base_url) {
     file_put_contents($nama_folder . '/index.php', $konten_index);
 }
 
-// Baca daftar folder dari file naga.txt
-$daftar_folder = file('naga.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+// Baca daftar folder dari file brand.txt
+$daftar_folder = file('brand.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-// Periksa jika file naga.txt berhasil dibaca
+// Periksa jika file brand.txt berhasil dibaca
 if ($daftar_folder === false) {
-    die('Gagal membaca file naga.txt');
+    die('Gagal membaca file brand.txt');
 }
 
 // Baca konten dari file template.html
@@ -81,4 +81,5 @@ $robots_content .= "Sitemap: " . $base_url . "sitemap.xml\n";  // Menyertakan UR
 file_put_contents('robots.txt', $robots_content);
 
 echo "Folder, file index.php, sitemap.xml, dan robots.txt berhasil dibuat.";
+
 ?>
