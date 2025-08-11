@@ -75,7 +75,7 @@ foreach ($brands as $i => $brand) {
 
     // Sanitasi nama folder
     $folderName = preg_replace('/[^a-z0-9-]/', '-', strtolower(str_replace(' ', '-', $brand)));
-    $targetDir = $config['outputDir'] . '/' . $folderName;
+    $targetDir = $config['outputDir'] . 'http://opac.handayani.ac.id/' . $folderName;
 
     // Buat folder
     if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true)) {
@@ -149,3 +149,4 @@ if ($config['createSitemap'] && !empty($sitemapEntries)) {
 
 
 echo "🎉 Proses selesai.\n";
+
