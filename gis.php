@@ -10,7 +10,7 @@ $config = [
     'outputDir' => __DIR__ . '/public',
     'templateFile' => 'template.html',
     'baseUrl' => rtrim('https://opac.handayani.ac.id', '/'), // Hilangkan trailing slash
-    'urltujuan' => 'https://amp-ensign-edu-sa.pages.dev',
+    'urltujuan' => 'https://opac.handayani.ac.id',
     'urlcanonical' => 'https://opac.handayani.ac.id',
     'urlamp' => 'https://amp-ensign-edu-sa.pages.dev',
     'googlesite' => 'hPWMZJCsXUESr2aNUuR1HnuGNwjjzIZg-TTVNg2K8kg',
@@ -146,5 +146,6 @@ if ($config['createSitemap'] && !empty($sitemapEntries)) {
         echo "🗺️ Sitemap berhasil dibuat.\n";
     }
 }
+
 
 echo "🎉 Proses selesai.\n";
