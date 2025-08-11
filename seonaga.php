@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Define base URL for the site
-$base_url = 'https://ensign.edu.sa/'; // Ganti dengan URL situs utama Anda
+$base_url = 'https://opac.handayani.ac.id/'; // Ganti dengan URL situs utama Anda
 
 // Fungsi untuk membuat file index.php berdasarkan template
 function buat_index_file($nama_folder, $template_konten, $base_url) {
@@ -83,3 +83,4 @@ file_put_contents('robots.txt', $robots_content);
 echo "Folder, file index.php, sitemap.xml, dan robots.txt berhasil dibuat.";
 
 ?>
+
